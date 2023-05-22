@@ -13,7 +13,6 @@ let VIDEOS = [];
 let nextPageToken = '';
 
 app.get('/', (req, res) => {
-	// console.log(VIDEOS);
 	res.render('index', { title: 'Test', videos: VIDEOS });
 });
 
@@ -43,16 +42,12 @@ app.post('/', (req, res) => {
 
 					VIDEOS.push(data);
 				});
-				console.log(VIDEOS);
 			});
 
 		res.redirect('/');
 	});
 });
 
-// API KEY: AIzaSyAmunb08OB1rWWw9tx0mBisdfuTDVmRCM0
-
-// items[1].id.videoId;
 app.listen(3000, () => {
 	console.log('listening on port 3000');
 });
